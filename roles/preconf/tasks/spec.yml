@@ -1,0 +1,15 @@
+---
+- name: Copy spec.json to remote machine
+  copy: src=./spec.json dest={{ home }}/spec.json mode=0644 group={{ username }} owner={{ username }} force=yes
+
+- name: Install jq
+  apt:
+    name: jq
+    update_cache: yes
+
+- name: Install curl
+  apt:
+    name: curl
+
+- name: Copy bootnodes.txt to remote machine
+  copy: src=./bootnodes.txt dest={{ home }}/bootnodes.txt mode=0755 group={{ username }} owner={{ username }} force=yes

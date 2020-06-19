@@ -1,0 +1,11 @@
+- name: Bootnode deployment
+  import_playbook: bootnode.yml
+  tags: bootnode
+
+- name: Moc deployment
+  import_playbook: moc.yml
+  tags: moc
+
+- name: Validator deployment
+  import_playbook: validator.yml
+  tags: validator
